@@ -24,10 +24,38 @@
     <lombok.version>1.18.20</lombok.version>
     <tomcat7.version>2.2</tomcat7.version>
     <junit.version>4.11</junit.version>
+    <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+    <flyway.version>9.3.0</flyway.version>
+    <flyway-mysql.version>9.4.0</flyway-mysql.version>
+    <hibernate-core.version>6.1.3.Final</hibernate-core.version>
   </properties>
 
   <dependencies>
-    <!-- MySQL -->
+    <!-- Hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate-core.version}</version>
+    </dependency>
+    <!-- Flyway -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>${flyway.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-mysql</artifactId>
+      <version>${flyway-mysql.version}</version>
+    </dependency>
+    <!-- Servlets -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${javax.servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- MySQLConnector -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -46,6 +74,7 @@
       <artifactId>tomcat7-maven-plugin</artifactId>
       <version>${tomcat7.version}</version>
     </dependency>
+    <!-- Junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -87,6 +116,7 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+
       </plugins>
     </pluginManagement>
   </build>

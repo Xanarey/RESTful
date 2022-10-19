@@ -6,7 +6,7 @@
 <body>
 <%
     if (request.getAttribute("userRecord") != null) {
-        User user = (User) request.getAttribute("studentRecord");
+        User user = (User) request.getAttribute("userRecord");
 %>
 
 <h1>User Record</h1>

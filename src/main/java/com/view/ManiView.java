@@ -16,7 +16,7 @@ public class ManiView {
             CHOICE_MENU = scanner.nextLong();
 
             if (CHOICE_MENU == 2) {
-                userView.getAllUsers();
+
             }
 
         } while (CHOICE_MENU != 1);

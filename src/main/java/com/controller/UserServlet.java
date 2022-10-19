@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.rmi.ServerException;
+
 
 
 @WebServlet(
@@ -19,11 +19,12 @@ import java.rmi.ServerException;
 )
 public class UserServlet extends HttpServlet {
 
-    private final UserService userService = new UserService();
+    private UserService userService = new UserService();
 
     private void processRequest(
             HttpServletRequest request, HttpServletResponse response)
-            throws ServerException, IOException, ServletException {
+            throws ServletException, IOException {
+
         String userID = request.getParameter("id");
         if (userID != null) {
             Long id = Long.parseLong(userID);
@@ -37,12 +38,18 @@ public class UserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
+    protected void doGet(
+            HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        processRequest(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
+    protected void doPost(
+            HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        processRequest(request, response);
     }
 }

@@ -3,7 +3,6 @@ package com.repository.Hibernate;
 import com.model.User;
 import com.repository.UserRepo;
 import com.utils.HibernateUtil;
-import org.apache.maven.model.Developer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -12,11 +11,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class HibernateUserRepoImpl implements UserRepo {
-
-    @Override
-    public User insert(User user) {
-        return null;
-    }
 
     @Override
     public List<User> getAll() {
@@ -30,6 +24,11 @@ public class HibernateUserRepoImpl implements UserRepo {
             return Collections.emptyList();
         }
         return userList;
+    }
+
+    @Override
+    public User insert(User user) {
+        return null;
     }
 
     @Override

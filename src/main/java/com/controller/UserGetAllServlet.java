@@ -10,14 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-
+import java.util.List;
 
 @WebServlet(
-        name = "UserServlet",
+        name = "UserGetAllServlet",
         urlPatterns = "/user-record"
 )
-public class UserServlet extends HttpServlet {
+public class UserGetAllServlet extends HttpServlet {
 
     private UserService userService = new UserService();
 
@@ -25,15 +24,11 @@ public class UserServlet extends HttpServlet {
             HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String userID = request.getParameter("id");
-        if (userID != null) {
-            Long id = Long.parseLong(userID);
-            User user = userService.getById(id);
-            request.setAttribute("userRecord", user);
-        }
+        List<User> userList = userService.getAllUsers();
+        request.setAttribute("userGetAllRecord", userList);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(
-                "/WEB-INF/jsp/userView/userById-record.jsp");
+                "/WEB-INF/jsp/userView/userGetAll-record.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -52,4 +47,5 @@ public class UserServlet extends HttpServlet {
 
         processRequest(request, response);
     }
+
 }

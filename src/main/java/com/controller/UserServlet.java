@@ -28,7 +28,7 @@ public class UserServlet extends HttpServlet {
         if (userID != null) {
             Long id = Long.parseLong(userID);
             User user = userService.getById(id);
-            request.setAttribute("user-record", user);
+            request.setAttribute("userRecord", user);
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(

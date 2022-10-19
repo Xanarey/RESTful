@@ -1,11 +1,11 @@
 package com.view;
 
-import com.controller.UserController;
+import com.controller.UserServlet;
 import com.model.User;
 
 public class UserView {
 
-    private UserController userController = new UserController();
+    private UserServlet userController = new UserServlet();
 
     public void getAllUsers() {
         for (User d: userController.getAllUsers()) {

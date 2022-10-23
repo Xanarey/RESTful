@@ -1,5 +1,6 @@
 <%@ page import="com.model.User" %>
 <%@ page import="java.util.List" %>
+
 <html>
 <head>
     <title>Get All Records</title>
@@ -11,17 +12,15 @@
 %>
 
 <h1>Users Records</h1>
-<ul>
-<%--    <%--%>
-<%--        if (userList != null && !userList.isEmpty()) {--%>
-<%--            System.out.println("<ui>");--%>
-<%--            for (User s : userList) {--%>
-<%--                System.out.println("<li>" + s.getId().toString() + "</li>");--%>
-<%--            }--%>
-<%--            System.out.println("</ui>");--%>
-<%--        } else System.out.println("<p>There are no users yet!</p>");--%>
-<%--    %>--%> // TODO не работает вывод коллекции , остановился здесь ...
-</ul>
+<table>
+    <% for (User user: userList) {%>
+    <tr>
+        <td><%= user.getId()%></td>
+        <td><%= user.getFirstname()%></td>
+        <td><%= user.getLastname()%></td>
+    </tr>
+    <%}%>
+</table>
 
 <%
 } else {

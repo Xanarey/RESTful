@@ -17,6 +17,8 @@
           <option value="junit:junit" />
           <option value="org.projectlombok:lombok" />
           <option value="org.flywaydb:flyway-core" />
+          <option value="commons-fileupload:commons-fileupload" />
+          <option value="org.hibernate:hibernate-core" />
         </list>
       </option>
     </inspection_tool>

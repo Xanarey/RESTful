@@ -16,8 +16,7 @@
     <% for (User user: userList) {%>
     <tr>
         <td><%= user.getId()%></td>
-        <td><%= user.getFirstname()%></td>
-        <td><%= user.getLastname()%></td>
+        <td><%= user.getName()%></td>
     </tr>
     <%}%>
 </table>

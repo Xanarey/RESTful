@@ -5,14 +5,13 @@
 </head>
 <body>
 <%
-    if (request.getAttribute("userRecord") != null) {
-        User user = (User) request.getAttribute("userRecord");
+    User user = (User) request.getAttribute("userRecord");
+    if (user.getId() != null) {
 %>
 
 <h1>User Record</h1>
 <div>ID: <%= user.getId()%></div>
-<div>First Name: <%= user.getFirstname()%></div>
-<div>Last Name: <%= user.getLastname()%></div>
+<div>First Name: <%= user.getName()%></div>
 
 <%
 } else {

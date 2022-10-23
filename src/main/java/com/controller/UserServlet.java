@@ -12,18 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-
 @WebServlet(
         name = "UserServlet",
-        urlPatterns = "/user-record"
+        urlPatterns = "/getById"
 )
 public class UserServlet extends HttpServlet {
 
     private UserService userService = new UserService();
 
-    private void processRequest(
-            HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String userID = request.getParameter("id");
         if (userID != null) {
@@ -38,18 +35,12 @@ public class UserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(
-            HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
 
     @Override
-    protected void doPost(
-            HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
 }

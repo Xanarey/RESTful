@@ -13,6 +13,11 @@
 <div>ID: <%= user.getId()%></div>
 <div>First Name: <%= user.getName()%></div>
 
+<form method="post" action="/uploadFile" enctype="multipart/form-data">
+    <input type="text" name="upload-file">
+    <input type="file" name="file-name">
+    <button>Send</button>
+</form>
 <%
 } else {
 %>

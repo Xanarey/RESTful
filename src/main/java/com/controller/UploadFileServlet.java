@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @WebServlet(
@@ -29,9 +28,9 @@ public class UploadFileServlet extends HttpServlet {
                         .collect(Collectors.joining("\n"));
                 log(uploadFile);
             } else {
-                part.write(UUID.randomUUID() + part.getSubmittedFileName());
+                part.write(part.getSubmittedFileName());
             }
         }
-        resp.sendRedirect("/getAllUsers");
+        resp.sendRedirect(req.getHeader("referer"));
     }
 }

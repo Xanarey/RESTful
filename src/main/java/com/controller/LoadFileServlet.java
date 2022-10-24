@@ -11,13 +11,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.UUID;
 import java.util.stream.Collectors;
 @WebServlet(
         name = "LoadFileServlet",
         urlPatterns = "/loadFile"
 )
-@MultipartConfig(location = "C:/Users/Пользователь/Desktop/test")
+@MultipartConfig(location = "C:/Users/Пользователь/Desktop/filestorage")
 public class LoadFileServlet extends HttpServlet {
 
     @Override
@@ -31,9 +30,9 @@ public class LoadFileServlet extends HttpServlet {
                         .collect(Collectors.joining("\n"));
                 log(uploadFile);
             } else {
-                part.write(UUID.randomUUID() + part.getSubmittedFileName());
+                part.write(part.getSubmittedFileName());
             }
         }
-        resp.sendRedirect("/getAllUsers");
+        resp.sendRedirect(req.getHeader("referer"));
     }
 }

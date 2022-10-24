@@ -6,7 +6,6 @@ import com.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,8 +24,8 @@ public class HibernateUserRepoImpl implements UserRepo {
 
     @Override
     public List<User> getAll() {
-        List<User> userList = new ArrayList<>();
-        Transaction transaction = null;
+        List<User> userList;
+        Transaction transaction;
         try(Session session = HibernateUtil.getSession()) {
             transaction = session.beginTransaction();
             userList = session.createQuery("FROM User", User.class).list();

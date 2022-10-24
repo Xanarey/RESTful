@@ -20,7 +20,13 @@
     </tr>
     <%}%>
 </table>
-
+<br>
+<h3>Update users</h3>
+<form method="post" action="/!!!!!!!" enctype="">
+    <input type="text" name="update-user">
+    <input type="file" name="user-name">
+    <button>Update</button>
+</form>
 <%
 } else {
 %>

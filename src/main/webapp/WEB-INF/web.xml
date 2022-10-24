@@ -7,19 +7,19 @@
 
   <servlet>
     <servlet-name>UserServlet</servlet-name>
-    <servlet-class>com.controller.UserServlet</servlet-class>
+    <servlet-class>com.controller.UserServlets.UserServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserGetAllServlet</servlet-name>
-    <servlet-class>com.controller.UserGetAllServlet</servlet-class>
+    <servlet-class>com.controller.UserServlets.UserGetAllServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UploadFileServlet</servlet-name>
-    <servlet-class>com.controller.UploadFileServlet</servlet-class>
+    <servlet-class>com.controller.FileServlets.UploadFileServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoadFileServlet</servlet-name>
-    <servlet-class>com.controller.LoadFileServlet</servlet-class>
+    <servlet-class>com.controller.FileServlets.LoadFileServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

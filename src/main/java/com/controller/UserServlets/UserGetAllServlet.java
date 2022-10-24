@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.UserServlets;
 
 import com.model.User;
 import com.service.UserService;

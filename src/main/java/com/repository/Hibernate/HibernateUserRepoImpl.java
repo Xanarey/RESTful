@@ -38,17 +38,34 @@ public class HibernateUserRepoImpl implements UserRepo {
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        try (Session session = HibernateUtil.getSession()){
+            session.beginTransaction();
+            session.remove(session.get(User.class, id));
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public User insert(User user) {
-        return null;
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSession()){
+            transaction = session.beginTransaction();
+            session.merge(user);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null)
+                transaction.rollback();
+            e.printStackTrace();
+        }
+        return user;
     }
 
     @Override
     public User update(User user) {
-        return null;
+        insert(user);
+        return user;
     }
 }

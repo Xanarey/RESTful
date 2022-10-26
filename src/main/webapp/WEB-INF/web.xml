@@ -5,7 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-<!-- UserServlet -->
+  <!-- UserServlet -->
 
   <servlet>
     <servlet-name>UserServlet</servlet-name>
@@ -28,7 +28,7 @@
     <servlet-class>com.controller.UserServlets.UserDeleteByIdServlet</servlet-class>
   </servlet>
 
-<!-- FileServlet -->
+  <!-- FileServlet -->
 
   <servlet>
     <servlet-name>UploadFileServlet</servlet-name>

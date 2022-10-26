@@ -21,6 +21,18 @@
     <servlet-name>LoadFileServlet</servlet-name>
     <servlet-class>com.controller.FileServlets.LoadFileServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserCreateServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserCreateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserDeleteByIdServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserDeleteByIdServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
@@ -37,6 +49,18 @@
   <servlet-mapping>
     <servlet-name>LoadFileServlet</servlet-name>
     <url-pattern>/loadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <url-pattern>/UserUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserCreateServlet</servlet-name>
+    <url-pattern>/UserCreateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserDeleteByIdServlet</servlet-name>
+    <url-pattern>/UserDeleteByIdServlet</url-pattern>
   </servlet-mapping>
 
 </web-app>

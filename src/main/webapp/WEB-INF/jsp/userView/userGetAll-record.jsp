@@ -21,11 +21,32 @@
     <%}%>
 </table>
 <br>
-<h3>Update users</h3>
-<form method="post" action="/!!!!!!!" enctype="">
-    <input type="text" name="update-user">
-    <input type="file" name="user-name">
-    <button>Update</button>
+<h3>Update user</h3>
+<form action="UserUpdateServlet" method="POST">
+    Id: <label>
+    <input type="text" name="id">
+</label>
+    <br/>
+    Name: <label>
+    <input type="text" name="name"/>
+</label>
+    <input type="submit" value="Update"/>
+</form>
+<h3>Create user</h3>
+<form action="UserCreateServlet" method="POST">
+    <br/>
+    Name: <label>
+    <input type="text" name="name"/>
+</label>
+    <input type="submit" value="Create"/>
+</form>
+<h3>Delete user by id</h3>
+<form action="UserDeleteByIdServlet" method="POST">
+    <br/>
+    Id: <label>
+    <input type="text" name="id"/>
+</label>
+    <input type="submit" value="Delete"/>
 </form>
 <%
 } else {

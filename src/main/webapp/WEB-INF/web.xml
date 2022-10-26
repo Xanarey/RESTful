@@ -15,11 +15,11 @@
   </servlet>
   <servlet>
     <servlet-name>UploadFileServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.UploadFileServlet</servlet-class>
+    <servlet-class>com.controller.FileServlets.FileUploadServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoadFileServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.LoadFileServlet</servlet-class>
+    <servlet-class>com.controller.FileServlets.FileLoadServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserUpdateServlet</servlet-name>
@@ -32,6 +32,10 @@
   <servlet>
     <servlet-name>UserDeleteByIdServlet</servlet-name>
     <servlet-class>com.controller.UserServlets.UserDeleteByIdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileGetAllServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileGetAllServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -61,6 +65,10 @@
   <servlet-mapping>
     <servlet-name>UserDeleteByIdServlet</servlet-name>
     <url-pattern>/UserDeleteByIdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileGetAllServlet</servlet-name>
+    <url-pattern>/FileGetAllServlet</url-pattern>
   </servlet-mapping>
 
 </web-app>

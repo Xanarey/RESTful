@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
         urlPatterns = "/uploadFile"
 )
 @MultipartConfig(location = "C:/Users/Пользователь/Desktop/upload")
-public class UploadFileServlet extends HttpServlet {
+public class FileUploadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
         urlPatterns = "/loadFile"
 )
 @MultipartConfig(location = "C:/Users/Пользователь/Desktop/filestorage")
-public class LoadFileServlet extends HttpServlet {
+public class FileLoadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

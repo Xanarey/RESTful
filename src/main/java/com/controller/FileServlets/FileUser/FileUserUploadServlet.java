@@ -1,4 +1,4 @@
-package com.controller.FileServlets;
+package com.controller.FileServlets.FileUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -7,22 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.stream.Collectors;
+
 @WebServlet(
-        name = "LoadFileServlet",
-        urlPatterns = "/loadFile"
+        name = "UploadFileServlet",
+        urlPatterns = "/uploadFile"
 )
-@MultipartConfig(location = "C:/Users/Пользователь/Desktop/filestorage")
-public class FileLoadServlet extends HttpServlet {
+@MultipartConfig(location = "C:/Users/Пользователь/Desktop/upload")
+public class FileUserUploadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         for (Part part : req.getParts()) {
-            if (part.getName().equals("load-file")) {
+            if (part.getName().equals("upload-file")) {
                 InputStream inputStream = part.getInputStream();
                 InputStreamReader isr = new InputStreamReader(inputStream);
                 String uploadFile = new BufferedReader(isr)

@@ -5,21 +5,15 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+<!-- UserServlet -->
+
   <servlet>
     <servlet-name>UserServlet</servlet-name>
-    <servlet-class>com.controller.UserServlets.UserServlet</servlet-class>
+    <servlet-class>com.controller.UserServlets.UserGetByIdServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserGetAllServlet</servlet-name>
     <servlet-class>com.controller.UserServlets.UserGetAllServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UploadFileServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.FileUploadServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>LoadFileServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.FileLoadServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserUpdateServlet</servlet-name>
@@ -33,10 +27,27 @@
     <servlet-name>UserDeleteByIdServlet</servlet-name>
     <servlet-class>com.controller.UserServlets.UserDeleteByIdServlet</servlet-class>
   </servlet>
+
+<!-- FileServlet -->
+
+  <servlet>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileUser.FileUserUploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoadFileServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileUser.FileUserLoadServlet</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>FileGetAllServlet</servlet-name>
     <servlet-class>com.controller.FileServlets.FileGetAllServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>FileGetByIdServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileUser.FileGetByIdServlet</servlet-class>
+  </servlet>
+
+  <!-- UserServlet-Mapping -->
 
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
@@ -45,14 +56,6 @@
   <servlet-mapping>
     <servlet-name>UserGetAllServlet</servlet-name>
     <url-pattern>/getAllUsers</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UploadFileServlet</servlet-name>
-    <url-pattern>/uploadFile</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LoadFileServlet</servlet-name>
-    <url-pattern>/loadFile</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserUpdateServlet</servlet-name>
@@ -66,9 +69,24 @@
     <servlet-name>UserDeleteByIdServlet</servlet-name>
     <url-pattern>/UserDeleteByIdServlet</url-pattern>
   </servlet-mapping>
+
+  <!-- FileServlet-Mapping -->
+
+  <servlet-mapping>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <url-pattern>/uploadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoadFileServlet</servlet-name>
+    <url-pattern>/loadFile</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>FileGetAllServlet</servlet-name>
     <url-pattern>/FileGetAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileGetByIdServlet</servlet-name>
+    <url-pattern>/FileGetByIdServlet</url-pattern>
   </servlet-mapping>
 
 </web-app>

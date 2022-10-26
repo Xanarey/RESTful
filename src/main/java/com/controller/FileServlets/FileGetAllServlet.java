@@ -15,7 +15,7 @@ import java.util.List;
 
 @WebServlet(
         name = "FileGetAllServlet",
-        urlPatterns = "/fileGetAll"
+        urlPatterns = "/FileGetAllServlet"
 )
 public class FileGetAllServlet extends HttpServlet {
 

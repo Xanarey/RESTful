@@ -16,7 +16,7 @@ import java.io.IOException;
         name = "UserServlet",
         urlPatterns = "/getById"
 )
-public class UserServlet extends HttpServlet {
+public class UserGetByIdServlet extends HttpServlet {
 
     private UserService userService = new UserService();
 

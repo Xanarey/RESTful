@@ -1,7 +1,6 @@
 package com.controller.FileServlets.FileUser;
 
 import com.model.File;
-import com.model.User;
 import com.service.FileService;
 
 import javax.servlet.RequestDispatcher;
@@ -30,7 +29,7 @@ public class FileGetByIdServlet extends HttpServlet {
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(
-                "/WEB-INF/jsp/fileView/fileById-record.jsp");
+                "/WEB-INF/jsp/fileView/fileGetAll-record.jsp");
         dispatcher.forward(request, response);
     }
 

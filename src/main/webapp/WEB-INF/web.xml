@@ -82,7 +82,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>FileGetAllServlet</servlet-name>
-    <url-pattern>/FileGetAllServlet</url-pattern>
+    <url-pattern>/getAllFiles</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>FileGetByIdServlet</servlet-name>

@@ -21,33 +21,33 @@
     <%}%>
 </table>
 <br>
-<%--<h3>Update user</h3>--%>
-<%--<form action="UserUpdateServlet" method="POST">--%>
-<%--    Id: <label>--%>
-<%--    <input type="text" name="id">--%>
-<%--</label>--%>
-<%--    <br/>--%>
-<%--    Name: <label>--%>
-<%--    <input type="text" name="name"/>--%>
-<%--</label>--%>
-<%--    <input type="submit" value="Update"/>--%>
-<%--</form>--%>
-<%--<h3>Create user</h3>--%>
-<%--<form action="UserCreateServlet" method="POST">--%>
-<%--    <br/>--%>
-<%--    Name: <label>--%>
-<%--    <input type="text" name="name"/>--%>
-<%--</label>--%>
-<%--    <input type="submit" value="Create"/>--%>
-<%--</form>--%>
-<%--<h3>Delete user by id</h3>--%>
-<%--<form action="UserDeleteByIdServlet" method="POST">--%>
-<%--    <br/>--%>
-<%--    Id: <label>--%>
-<%--    <input type="text" name="id"/>--%>
-<%--</label>--%>
-<%--    <input type="submit" value="Delete"/>--%>
-<%--</form>--%>
+<h3>Update file</h3>
+<form action="FileGetByIdServlet" method="POST">
+    Id: <label>
+    <input type="text" name="id">
+</label>
+    <br/>
+    Url: <label>
+    <input type="text" name="name"/>
+</label>
+    <input type="submit" value="Update"/>
+</form>
+<h3>Create file</h3>
+<form action="FileGetByIdServlet" method="POST">
+    <br/>
+    Url: <label>
+    <input type="text" name="name"/>
+</label>
+    <input type="submit" value="Create"/>
+</form>
+<h3>Delete file by id</h3>
+<form action="FileGetByIdServlet" method="POST">
+    <br/>
+    Id: <label>
+    <input type="text" name="id"/>
+</label>
+    <input type="submit" value="Delete"/>
+</form>
 <%
 } else {
 %>

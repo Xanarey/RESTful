@@ -6,30 +6,12 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <!-- UserServlet -->
-
-  <servlet>
-    <servlet-name>UserServlet</servlet-name>
-    <servlet-class>com.controller.UserServlets.UserGetByIdServlet</servlet-class>
-  </servlet>
   <servlet>
     <servlet-name>UserGetAllServlet</servlet-name>
-    <servlet-class>com.controller.UserServlets.UserGetAllServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UserUpdateServlet</servlet-name>
-    <servlet-class>com.controller.UserServlets.UserUpdateServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UserCreateServlet</servlet-name>
-    <servlet-class>com.controller.UserServlets.UserCreateServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UserDeleteByIdServlet</servlet-name>
-    <servlet-class>com.controller.UserServlets.UserDeleteByIdServlet</servlet-class>
+    <servlet-class>com.controller.UserGetAllServlet</servlet-class>
   </servlet>
 
   <!-- FileServlet -->
-
   <servlet>
     <servlet-name>UploadFileServlet</servlet-name>
     <servlet-class>com.controller.FileServlets.FileUser.FileUserUploadServlet</servlet-class>
@@ -48,30 +30,12 @@
   </servlet>
 
   <!-- UserServlet-Mapping -->
-
-  <servlet-mapping>
-    <servlet-name>UserServlet</servlet-name>
-    <url-pattern>/getById</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserGetAllServlet</servlet-name>
-    <url-pattern>/getAllUsers</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserUpdateServlet</servlet-name>
-    <url-pattern>/UserUpdateServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserCreateServlet</servlet-name>
-    <url-pattern>/UserCreateServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserDeleteByIdServlet</servlet-name>
-    <url-pattern>/UserDeleteByIdServlet</url-pattern>
+    <url-pattern>/api/v1/users*</url-pattern>
   </servlet-mapping>
 
   <!-- FileServlet-Mapping -->
-
   <servlet-mapping>
     <servlet-name>UploadFileServlet</servlet-name>
     <url-pattern>/uploadFile</url-pattern>

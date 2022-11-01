@@ -5,7 +5,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="db:hibernate.cfg.xml" value="037cda83-edc3-4ed3-b6ad-cbe99b6a32e1" />
-          <unit-entry name="hibernate.cfg.xml" value="037cda83-edc3-4ed3-b6ad-cbe99b6a32e1" />
+          <unit-entry name="hibernate.cfg.xml" value="795449c1-a97e-4da5-b73c-b353dc2c238d" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
@@ -19,6 +19,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">
@@ -26,7 +27,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="REST-API" value="037cda83-edc3-4ed3-b6ad-cbe99b6a32e1" />
+          <factory-entry name="REST-API" value="e16f23c8-0632-4958-9c66-74436e0eb393" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

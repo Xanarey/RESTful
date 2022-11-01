@@ -32,6 +32,7 @@
     <json.version>4.0.1</json.version>
     <postgresql.version>42.5.0</postgresql.version>
     <jstl.version>2.0.4</jstl.version>
+
   </properties>
 
   <dependencies>

@@ -1,10 +1,12 @@
 package com.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 import java.util.Objects;
 
 @Entity
+@Builder
 @Table(name = "users", schema = "postgres")
 public class User {
 

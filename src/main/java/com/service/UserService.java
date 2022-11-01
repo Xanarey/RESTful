@@ -1,7 +1,7 @@
 package com.service;
 
 import com.model.User;
-import com.repository.Hibernate.HibernateUserRepoImpl;
+import com.repository.hibernate.HibernateUserRepoImpl;
 import com.repository.UserRepo;
 
 import java.util.List;

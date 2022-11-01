@@ -15,20 +15,20 @@ import java.time.LocalDateTime;
 public class Event {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
     private Long id;
 
-    @Column(name = "created")
-    private LocalDateTime created;
-    @Column(name = "updated")
-    private LocalDateTime updated;
+//    @Column(name = "created")
+//    private LocalDateTime created;
+//    @Column(name = "updated")
+//    private LocalDateTime updated;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @OneToOne
-    @JoinColumn(name = "file_id")
-    private File file;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
+//
+//    @OneToOne
+//    @JoinColumn(name = "file_id")
+//    private File file;
 
 }

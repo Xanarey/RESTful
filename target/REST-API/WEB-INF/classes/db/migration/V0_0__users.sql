@@ -1,7 +1,6 @@
-CREATE TABLE IF NOT EXISTS users
+CREATE TABLE IF NOT EXISTS postgres.users
 (
-    id serial
-        constraint table_name_pk
-            primary key,
-    name varchar
+    id integer NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT users_pkey PRIMARY KEY (id)
 );

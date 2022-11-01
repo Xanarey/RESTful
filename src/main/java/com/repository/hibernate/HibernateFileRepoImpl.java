@@ -1,4 +1,4 @@
-package com.repository.Hibernate;
+package com.repository.hibernate;
 
 import com.model.File;
 import com.repository.FileRepo;

@@ -1,4 +1,4 @@
-package com.repository.Hibernate;
+package com.repository.hibernate;
 
 import com.model.User;
 import com.repository.UserRepo;
@@ -15,7 +15,7 @@ public class HibernateUserRepoImpl implements UserRepo {
     public User getById(Long id) {
         User user = new User();
         try (Session session = HibernateUtil.getSession()){
-            user =  (User) session.createQuery("SELECT d FROM User d WHERE d.id = (:id)").setParameter("id", id).getSingleResult();
+            user = session.get(User.class, id);
         } catch (Exception e) {
             e.printStackTrace();
         }

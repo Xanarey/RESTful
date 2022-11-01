@@ -16,12 +16,13 @@ import java.util.List;
 @Table(name = "users", schema = "postgres")
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(generator = "increment")
     private Long id;
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "user")
-    private List<Event> events;
+//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+//    private List<Event> events;
 
 }

@@ -2,7 +2,7 @@ package com.service;
 
 import com.model.File;
 import com.repository.FileRepo;
-import com.repository.Hibernate.HibernateFileRepoImpl;
+import com.repository.hibernate.HibernateFileRepoImpl;
 
 import java.util.List;
 

@@ -8,49 +8,14 @@
   <!-- UserServlet -->
   <servlet>
     <servlet-name>UserGetAllServlet</servlet-name>
-    <servlet-class>com.controller.UserGetAllServlet</servlet-class>
-  </servlet>
-
-  <!-- FileServlet -->
-  <servlet>
-    <servlet-name>UploadFileServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.FileUser.FileUserUploadServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>LoadFileServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.FileUser.FileUserLoadServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>FileGetAllServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.FileGetAllServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>FileGetByIdServlet</servlet-name>
-    <servlet-class>com.controller.FileServlets.FileUser.FileGetByIdServlet</servlet-class>
+    <servlet-class>com.controller.UserRestControllerV1</servlet-class>
   </servlet>
 
   <!-- UserServlet-Mapping -->
   <servlet-mapping>
     <servlet-name>UserGetAllServlet</servlet-name>
-    <url-pattern>/api/v1/users*</url-pattern>
+    <url-pattern>/api/v1/users/*</url-pattern>
   </servlet-mapping>
 
-  <!-- FileServlet-Mapping -->
-  <servlet-mapping>
-    <servlet-name>UploadFileServlet</servlet-name>
-    <url-pattern>/uploadFile</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>LoadFileServlet</servlet-name>
-    <url-pattern>/loadFile</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>FileGetAllServlet</servlet-name>
-    <url-pattern>/getAllFiles</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>FileGetByIdServlet</servlet-name>
-    <url-pattern>/FileGetByIdServlet</url-pattern>
-  </servlet-mapping>
 
 </web-app>

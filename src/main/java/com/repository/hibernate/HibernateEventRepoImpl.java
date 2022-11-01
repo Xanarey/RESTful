@@ -1,4 +1,4 @@
-package com.repository.Hibernate;
+package com.repository.hibernate;
 
 import com.model.Event;
 import com.repository.EventRepo;

@@ -19,9 +19,9 @@ import java.util.List;
 
 @WebServlet(
         name = "UserGetAllServlet",
-        urlPatterns = "/api/v1/users*"
+        urlPatterns = "/api/v1/users/*"
 )
-public class UserGetAllServlet extends HttpServlet {
+public class UserRestControllerV1 extends HttpServlet {
 
     private final UserService userService = new UserService();
     private final Gson GSON = new Gson();

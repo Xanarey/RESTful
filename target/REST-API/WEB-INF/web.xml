@@ -1,0 +1,92 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- UserServlet -->
+
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserGetByIdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserGetAllServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserGetAllServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserCreateServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserCreateServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserDeleteByIdServlet</servlet-name>
+    <servlet-class>com.controller.UserServlets.UserDeleteByIdServlet</servlet-class>
+  </servlet>
+
+  <!-- FileServlet -->
+
+  <servlet>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileUser.FileUserUploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoadFileServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileUser.FileUserLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileGetAllServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileGetAllServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileGetByIdServlet</servlet-name>
+    <servlet-class>com.controller.FileServlets.FileUser.FileGetByIdServlet</servlet-class>
+  </servlet>
+
+  <!-- UserServlet-Mapping -->
+
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/getById</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserGetAllServlet</servlet-name>
+    <url-pattern>/getAllUsers</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserUpdateServlet</servlet-name>
+    <url-pattern>/UserUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserCreateServlet</servlet-name>
+    <url-pattern>/UserCreateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserDeleteByIdServlet</servlet-name>
+    <url-pattern>/UserDeleteByIdServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- FileServlet-Mapping -->
+
+  <servlet-mapping>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <url-pattern>/uploadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoadFileServlet</servlet-name>
+    <url-pattern>/loadFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileGetAllServlet</servlet-name>
+    <url-pattern>/getAllFiles</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileGetByIdServlet</servlet-name>
+    <url-pattern>/FileGetByIdServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>

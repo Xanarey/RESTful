@@ -1,8 +1,7 @@
-CREATE TABLE IF NOT EXISTS files
+CREATE TABLE IF NOT EXISTS postgres.files
 (
-    id serial
-        constraint files_pk
-            primary key,
-    url varchar
+    id integer NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    url character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT files_pkey PRIMARY KEY (id)
 );
-

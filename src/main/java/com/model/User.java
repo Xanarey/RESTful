@@ -3,6 +3,7 @@ package com.model;
 import jakarta.persistence.*;
 import lombok.Builder;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +15,9 @@ public class User {
     private Long id;
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "users")
+    private List<Event> events;
 
     public User() {}
 

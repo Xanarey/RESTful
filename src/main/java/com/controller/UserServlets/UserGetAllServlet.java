@@ -38,19 +38,8 @@ public class UserGetAllServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        StringBuilder content;
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream()))) {
-            content = new StringBuilder();
-            String line;
-            while ((line = in.readLine()) != null) {
-                content.append(line);
-            }
-        }
-        String con = String.valueOf(content);
-        User user = GSON.fromJson(con, User.class);
+        User user = getUserFromJsonString(request);
         userService.createUser(user);
-
     }
 
     @Override
@@ -71,6 +60,19 @@ public class UserGetAllServlet extends HttpServlet {
         response.setContentType("application/json; charset=UTF-8");
         out.print(jsonString);
         out.flush();
+    }
+
+    private User getUserFromJsonString(HttpServletRequest request) throws IOException {
+        StringBuilder content;
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream()))) {
+            content = new StringBuilder();
+            String line;
+            while ((line = in.readLine()) != null) {
+                content.append(line);
+            }
+        }
+        String con = String.valueOf(content);
+        return GSON.fromJson(con, User.class);
     }
 
 }

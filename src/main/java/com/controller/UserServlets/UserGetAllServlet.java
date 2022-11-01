@@ -22,7 +22,7 @@ import java.util.List;
 public class UserGetAllServlet extends HttpServlet {
 
     private final UserService userService = new UserService();
-    private Gson GSON = new Gson();
+    private final Gson GSON = new Gson();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,14 +44,13 @@ public class UserGetAllServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
+        User user = getUserFromJsonString(request);
+        userService.updateUser(user);
     }
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        userService.deleteById(Long.parseLong(request.getParameter("id")));
     }
 
     private void jsonConverter(HttpServletResponse response, Object object) throws IOException {

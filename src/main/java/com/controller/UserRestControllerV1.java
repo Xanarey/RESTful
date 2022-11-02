@@ -18,7 +18,7 @@ import java.util.List;
 // TODO посмотреть дескриптор развертывания
 
 @WebServlet(
-        name = "UserGetAllServlet",
+        name = "UserServlet",
         urlPatterns = "/api/v1/users/*"
 )
 public class UserRestControllerV1 extends HttpServlet {

@@ -1,7 +1,6 @@
-package com.controller.FileServlets;
+package com.controller;
 
 import com.model.File;
-import com.model.User;
 import com.service.FileService;
 
 import javax.servlet.RequestDispatcher;
@@ -14,10 +13,10 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(
-        name = "FileGetAllServlet",
-        urlPatterns = "/FileGetAllServlet"
+        name = "FileServlet",
+        urlPatterns = "/api/v1/files/*"
 )
-public class FileGetAllServlet extends HttpServlet {
+public class FileRestControllerV1 extends HttpServlet {
 
     private FileService fileService = new FileService();
 

@@ -22,7 +22,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-//    private List<Event> events;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Event> events;
 
 }

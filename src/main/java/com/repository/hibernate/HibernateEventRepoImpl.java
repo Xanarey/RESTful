@@ -2,33 +2,69 @@ package com.repository.hibernate;
 
 import com.model.Event;
 import com.repository.EventRepo;
+import com.utils.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
+import java.util.Collections;
 import java.util.List;
 
 public class HibernateEventRepoImpl implements EventRepo {
 
     @Override
-    public Event insert(Event event) {
-        return null;
+    public Event getById(Long id) {
+        Event event = new Event();
+        try (Session session = HibernateUtil.getSession()){
+            event = session.get(Event.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return event;
     }
 
     @Override
     public List<Event> getAll() {
-        return null;
+        List<Event> eventList;
+        Transaction transaction;
+        try(Session session = HibernateUtil.getSession()) {
+            transaction = session.beginTransaction();
+            eventList = session.createQuery("FROM Event ", Event.class).list();
+            transaction.commit();
+        } catch (Throwable t) {
+            return Collections.emptyList();
+        }
+        return eventList;
     }
 
     @Override
-    public Event getById(Long id) {
-        return null;
+    public void deleteById(Long id) {
+        try (Session session = HibernateUtil.getSession()){
+            session.beginTransaction();
+            session.remove(session.get(Event.class, id));
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public Event insert(Event event) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSession()){
+            transaction = session.beginTransaction();
+            session.merge(event);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null)
+                transaction.rollback();
+            e.printStackTrace();
+        }
+        return event;
     }
 
     @Override
     public Event update(Event event) {
-        return null;
+        insert(event);
+        return event;
     }
 }

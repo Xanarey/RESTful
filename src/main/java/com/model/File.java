@@ -16,7 +16,7 @@ public class File {
     @Column(name = "url")
     private String url;
 
-//    @OneToOne(mappedBy = "file")
-//    private Event event;
+    @OneToOne(mappedBy = "file")
+    private Event event;
 
 }

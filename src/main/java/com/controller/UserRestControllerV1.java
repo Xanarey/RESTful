@@ -76,4 +76,6 @@ public class UserRestControllerV1 extends HttpServlet {
         return GSON.fromJson(con, User.class);
     }
 
+    // сделать общим
+
 }

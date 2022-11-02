@@ -15,7 +15,7 @@ public class HibernateFileRepoImpl implements FileRepo {
     public File getById(Long id) {
         File file = new File();
         try (Session session = HibernateUtil.getSession()){
-            file =  (File) session.createQuery("SELECT d FROM File d WHERE d.id = (:id)").setParameter("id", id).getSingleResult();
+            session.get(File.class, id);
         } catch (Exception e) {
             e.printStackTrace();
         }

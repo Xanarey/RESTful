@@ -5,41 +5,34 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <!-- UserServlet -->
+  <!-- Servlets -->
+
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>com.controller.UserRestControllerV1</servlet-class>
   </servlet>
-
-  <!-- FileServlet -->
   <servlet>
     <servlet-name>FileServlet</servlet-name>
     <servlet-class>com.controller.FileRestControllerV1</servlet-class>
   </servlet>
-
-  <!-- EventServlet -->
   <servlet>
     <servlet-name>EventServlet</servlet-name>
     <servlet-class>com.controller.EventRestControllerV1</servlet-class>
   </servlet>
 
-  <!-- UserServlet-Mapping -->
+  <!-- Mapping -->
+
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/api/v1/users/*</url-pattern>
   </servlet-mapping>
-
-  <!-- FileServlet-Mapping -->
   <servlet-mapping>
     <servlet-name>FileServlet</servlet-name>
     <url-pattern>/api/v1/files/*</url-pattern>
   </servlet-mapping>
-
-  <!-- EventServlet-Mapping -->
   <servlet-mapping>
     <servlet-name>EventServlet</servlet-name>
     <url-pattern>/api/v1/events/*</url-pattern>
   </servlet-mapping>
-
 
 </web-app>

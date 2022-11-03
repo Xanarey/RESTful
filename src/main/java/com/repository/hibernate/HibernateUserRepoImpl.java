@@ -15,12 +15,29 @@ public class HibernateUserRepoImpl implements UserRepo {
     public User getById(Long id) {
         User user = new User();
         try (Session session = HibernateUtil.getSession()){
-            user = session.get(User.class, id);
+            user = (User) session
+                    .createQuery("SELECT d FROM User d JOIN FETCH d.events WHERE d.id = (:id)")
+                    .setParameter("id", id)
+                    .getSingleResult();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return user;
     }
+
+//    @Override
+//    public Developer getById(Long id) {
+//        Developer developer = new Developer();
+//        try (Session session = HibernateUtil.getSession()){
+//            developer =  (Developer) session
+//            .createQuery("SELECT d FROM Developer d JOIN FETCH d.skills JOIN FETCH d.specialty WHERE d.id = (:id)")
+//            .setParameter("id", id)
+//            .getSingleResult();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return developer;
+//    }
 
     @Override
     public List<User> getAll() {

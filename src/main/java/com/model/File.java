@@ -1,10 +1,16 @@
 package com.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Objects;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "files", schema = "postgres")
 public class File {
 
@@ -16,7 +22,7 @@ public class File {
     @Column(name = "url")
     private String url;
 
-    @OneToOne(mappedBy = "file")
+    @OneToOne(mappedBy = "file", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Event event;
 
 }

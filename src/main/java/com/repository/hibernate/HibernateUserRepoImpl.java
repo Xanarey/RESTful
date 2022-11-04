@@ -19,6 +19,7 @@ public class HibernateUserRepoImpl implements UserRepo {
                     .createQuery("SELECT d FROM User d JOIN FETCH d.events WHERE d.id = (:id)")
                     .setParameter("id", id)
                     .getSingleResult();
+//            user = session.get(User.class, id);
         } catch (Exception e) {
             e.printStackTrace();
         }

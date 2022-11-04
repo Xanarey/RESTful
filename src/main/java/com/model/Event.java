@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -19,23 +20,12 @@ public class Event {
     @GeneratedValue(generator = "increment")
     private Long id;
 
-    @Column(name = "created")
-    public String created = getLocalDateTime(getCreated());
-    @Column(name = "updated")
-    public String updated  = getLocalDateTime(getUpdated());
-
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false, updatable = false, insertable = false)
     private User user;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "file_id")
     private File file;
-
-    private String getLocalDateTime(String created) {
-        return new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z")
-                .format(new Date(System.currentTimeMillis()));
-    }
-
 
 }
